@@ -15,6 +15,37 @@
         <footer class="blockquote-footer">Maria Montessori</footer>
       </blockquote>
     </div>
+
+    <div class="container mb-3">
+      <h2>Enrolling your child in a Montessori toddler program has many benefits</h2>
+      <div class="row">
+        <div class="col-12 col-md-4 p-4">
+          <span class="fa-stack fa-4x mb-2">
+            <i class="fa fa-circle fa-stack-2x text-info"></i>
+            <i class="fas fa-child fa-stack-1x text-white"></i>
+          </span>
+          <h3>Independence</h3>
+          <p>Montessori toddlers learn to do things themselves. They are able to play independently, happily!</p>
+        </div>
+        <div class="col-12 col-md-4 p-4">
+          <span class="fa-stack fa-4x mb-2">
+            <i class="fa fa-circle fa-stack-2x text-info"></i>
+            <i class="fas fa-people-carry fa-stack-1x text-white"></i>
+          </span>
+          <h3>Groupwork</h3>
+          <p>Group activities are introduced to teach them to both care and cooperate with one another.</p>
+        </div>
+        <div class="col-12 col-md-4 p-4">
+          <span class="fa-stack fa-4x mb-2">
+            <i class="fa fa-circle fa-stack-2x text-info"></i>
+            <i class="fas fa-comments fa-stack-1x text-white"></i>
+          </span>
+          <h3>Language</h3>
+          <p>Many parents report their children’s vocabulary increase dramatically, making interactions easier.</p>
+        </div>
+      </div>
+      <button class="btn btn-info" type="button">Read more</button>
+    </div>
   </div>
 </template>
 
