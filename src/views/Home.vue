@@ -46,6 +46,64 @@
       </div>
       <button class="btn btn-info" type="button">Read more</button>
     </div>
+
+    <div class="container mb-3 bg-light">
+      <h3 class="py-5">Check out our blog</h3>
+      <div class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+        </ol>
+        <div class="carousel-inner mx-auto pb-5" style="width: 70%;">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <img
+                  class="img-thumbnail d-block w-100"
+                  src="@/assets/carousel-1.jpg"
+                  alt="First slide"
+                />
+              </div>
+              <div class="col-12 col-md-8">
+                <h4 class="text-left">Settling in toolkit</h4>
+                <p
+                  class="text-left"
+                >It is the time of the year that many families are visiting Little Gems with their tiny gems and getting prepared for the future nursery life. As a toddler classroom leader, we are faced with plenty of questions and thoughts about the settling. . .</p>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-primary mr-2">Read full</button>
+                  <button type="button" class="btn btn-secondary">View all</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="carousel-item">
+            <img class="d-block w-100" src="@/assets/carousel-2.jpg" alt="Second slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="@/assets/carousel-3.jpg" alt="Third slide" />
+          </div>-->
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -56,3 +114,6 @@ export default {
   name: "Home"
 };
 </script>
+
+<style lang="scss" scoped>
+</style>
