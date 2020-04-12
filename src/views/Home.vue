@@ -9,14 +9,14 @@
       </div>
     </div>
 
-    <div class="container bg-light mb-3">
+    <section id="quote" class="container bg-light mb-3">
       <blockquote class="blockquote p-5 text-left">
         <p>"The most important period of life is not the age of university studies, but the first one, the period from birth to the age of six ... At no other age has the child greater need for an intelligent help, and any obstacle that impedes his creative work will lessen the chance he has of achieving perfection"</p>
         <footer class="blockquote-footer">Maria Montessori</footer>
       </blockquote>
-    </div>
+    </section>
 
-    <div class="container mb-3">
+    <section id="enroll" class="container mb-3">
       <h2>Enrolling your child in a Montessori toddler program has many benefits</h2>
       <div class="row">
         <div class="col-12 col-md-4 p-4">
@@ -45,18 +45,18 @@
         </div>
       </div>
       <button class="btn btn-info" type="button">Read more</button>
-    </div>
+    </section>
 
-    <div class="container mb-3 bg-light">
+    <section id="blog" class="container mb-3 bg-light">
       <h3 class="py-5">Check out our blog</h3>
       <div class="carousel slide">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+          <li @click="currentSlide = 0" data-slide-to="0" :class="{active: currentSlide === 0}"></li>
+          <li @click="currentSlide = 1" data-slide-to="1" :class="{active: currentSlide === 1}"></li>
+          <li @click="currentSlide = 2" data-slide-to="2" :class="{active: currentSlide === 2}"></li>
         </ol>
         <div class="carousel-inner mx-auto pb-5" style="width: 70%;">
-          <div class="carousel-item active">
+          <div class="carousel-item" :class="{active: currentSlide === 0}">
             <div class="row">
               <div class="col-12 col-md-4">
                 <img
@@ -77,33 +77,69 @@
               </div>
             </div>
           </div>
-          <!-- <div class="carousel-item">
-            <img class="d-block w-100" src="@/assets/carousel-2.jpg" alt="Second slide" />
+          <div class="carousel-item" :class="{active: currentSlide === 1}">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <img
+                  class="img-thumbnail d-block w-100"
+                  src="@/assets/carousel-2.jpg"
+                  alt="Second slide"
+                />
+              </div>
+              <div class="col-12 col-md-8">
+                <h4 class="text-left">Easter activities</h4>
+                <p
+                  class="text-left"
+                >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quae perferendis cupiditate animi provident deleniti, quos quisquam dolor? Illum quo vitae facilis error delectus necessitatibus sunt molestiae officiis nobis unde!</p>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-primary mr-2">Read full</button>
+                  <button type="button" class="btn btn-secondary">View all</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="@/assets/carousel-3.jpg" alt="Third slide" />
-          </div>-->
+          <div class="carousel-item" :class="{active: currentSlide === 2}">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <img
+                  class="img-thumbnail d-block w-100"
+                  src="@/assets/carousel-3.jpg"
+                  alt="Third slide"
+                />
+              </div>
+              <div class="col-12 col-md-8">
+                <h4 class="text-left">Christmas Holidays</h4>
+                <p
+                  class="text-left"
+                >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quae perferendis cupiditate animi provident deleniti, quos quisquam dolor? Illum quo vitae facilis error delectus necessitatibus sunt molestiae officiis nobis unde!</p>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-primary mr-2">Read full</button>
+                  <button type="button" class="btn btn-secondary">View all</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <a
           class="carousel-control-prev"
-          href="#carouselExampleIndicators"
+          style="cursor: pointer;"
           role="button"
-          data-slide="prev"
+          @click="carouselControl('prev')"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a
           class="carousel-control-next"
-          href="#carouselExampleIndicators"
+          style="cursor: pointer;"
           role="button"
-          data-slide="next"
+          @click="carouselControl('next')"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -111,7 +147,21 @@
 // @ is an alias to /src
 
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      currentSlide: 0
+    };
+  },
+  methods: {
+    carouselControl(string) {
+      if (string === "next") {
+        this.currentSlide === 2 ? (this.currentSlide = 0) : this.currentSlide++;
+      } else {
+        this.currentSlide === 0 ? (this.currentSlide = 2) : this.currentSlide--;
+      }
+    }
+  }
 };
 </script>
 
