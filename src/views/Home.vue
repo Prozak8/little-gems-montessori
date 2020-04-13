@@ -126,7 +126,7 @@
           role="button"
           @click="carouselControl('prev')"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="carousel-control-prev-icon"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a
@@ -135,7 +135,33 @@
           role="button"
           @click="carouselControl('next')"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="carousel-control-next-icon"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="events" class="container mb-3">
+      <h3>Upcoming Events</h3>
+      <div class="carousel slide w-50 mx-auto">
+        <h4>{{ `${formatMonth}, ${eventNav.year}` }}</h4>
+
+        <a
+          class="carousel-control-prev bg-primary"
+          style="cursor: pointer;"
+          role="button"
+          @click="dateHandler('prev')"
+        >
+          <span class="carousel-control-prev-icon"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next bg-primary"
+          style="cursor: pointer;"
+          role="button"
+          @click="dateHandler('next')"
+        >
+          <span class="carousel-control-next-icon"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
@@ -144,13 +170,18 @@
 </template>
 
 <script>
+import { months } from "@/shared/months.js";
 // @ is an alias to /src
 
 export default {
   name: "Home",
   data() {
     return {
-      currentSlide: 0
+      currentSlide: 0,
+      eventNav: {
+        year: Number(new Date(Date.now()).getFullYear()),
+        month: Number(new Date(Date.now()).getMonth())
+      }
     };
   },
   methods: {
@@ -160,6 +191,22 @@ export default {
       } else {
         this.currentSlide === 0 ? (this.currentSlide = 2) : this.currentSlide--;
       }
+    },
+    dateHandler(string) {
+      if (string === "next") {
+        this.eventNav.month === 11
+          ? (this.eventNav.year++, (this.eventNav.month = 0))
+          : this.eventNav.month++;
+      } else {
+        this.eventNav.month === 0
+          ? (this.eventNav.year--, (this.eventNav.month = 11))
+          : this.eventNav.month--;
+      }
+    }
+  },
+  computed: {
+    formatMonth() {
+      return months[this.eventNav.month];
     }
   }
 };
