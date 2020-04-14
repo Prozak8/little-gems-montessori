@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <img class="img-fluid my-3" alt="Little Gems Logo" src="../assets/logo.png" />
-    <div class="container py-5 mb-3">
+    <div class="container text-center">
+      <img class="img-fluid my-3" alt="Little Gems Logo" src="../assets/logo.png" />
+    </div>
+    <div class="container text-center py-5 mb-3">
       <div class="row">
         <p class="col-12 col-md-4">Montessori Accredited</p>
         <p class="col-12 col-md-4">Regional inspectors for MEA</p>
@@ -16,7 +18,7 @@
       </blockquote>
     </section>
 
-    <section id="enroll" class="container mb-3">
+    <section id="enroll" class="container text-center mb-3">
       <h2>Enrolling your child in a Montessori toddler program has many benefits</h2>
       <div class="row">
         <div class="col-12 col-md-4 p-4">
@@ -48,7 +50,7 @@
     </section>
 
     <section id="blog" class="container mb-3 bg-light">
-      <h3 class="py-5">Check out our blog</h3>
+      <h3 class="py-5 text-center">Check out our blog</h3>
       <div class="carousel slide">
         <ol class="carousel-indicators">
           <li @click="currentSlide = 0" data-slide-to="0" :class="{active: currentSlide === 0}"></li>
@@ -142,28 +144,46 @@
     </section>
 
     <section id="events" class="container mb-3">
-      <h3>Upcoming Events</h3>
-      <div class="carousel slide w-50 mx-auto">
-        <h4>{{ `${formatMonth}, ${eventNav.year}` }}</h4>
+      <h3 class="text-center">Upcoming Events</h3>
+      <div class="carousel slide mx-auto">
+        <div class="w-50 mx-auto carousel-controls" style="position: relative;">
+          <h4 class="text-center">{{ `${formatMonth}, ${eventNav.year}` }}</h4>
+          <a
+            class="carousel-control-prev bg-primary h-100"
+            style="cursor: pointer;"
+            role="button"
+            @click="dateHandler('prev')"
+          >
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next bg-primary h-100"
+            style="cursor: pointer;"
+            role="button"
+            @click="dateHandler('next')"
+          >
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
 
-        <a
-          class="carousel-control-prev bg-primary"
-          style="cursor: pointer;"
-          role="button"
-          @click="dateHandler('prev')"
-        >
-          <span class="carousel-control-prev-icon"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next bg-primary"
-          style="cursor: pointer;"
-          role="button"
-          @click="dateHandler('next')"
-        >
-          <span class="carousel-control-next-icon"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-inner mx-auto pb-5">
+          <div class="carousel-item" :class="{active: currentSlide === 0}">
+            <div class="d-flex flex-column flex-md-row border-bottom mb-2">
+              <div
+                class="bg-primary text-center text-white font-weight-bold p-4 mr-md-2 mb-2 mb-md-0"
+              >
+                <p class="h3">04</p>
+                <p class="h4">Wednesday</p>
+              </div>
+              <div class="d-flex flex-column justify-content-end">
+                <p class="h4">Induction Day</p>
+                <p class="h4">9am - 11am</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
