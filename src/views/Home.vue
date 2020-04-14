@@ -173,6 +173,7 @@
             <div class="d-flex flex-column flex-md-row border-bottom mb-2">
               <div
                 class="bg-primary text-center text-white font-weight-bold p-4 mr-md-2 mb-2 mb-md-0"
+                style="min-width: 12.5rem;"
               >
                 <p class="h3">04</p>
                 <p class="h4">Wednesday</p>
@@ -180,6 +181,19 @@
               <div class="d-flex flex-column justify-content-end">
                 <p class="h4">Induction Day</p>
                 <p class="h4">9am - 11am</p>
+              </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row border-bottom mb-2">
+              <div
+                class="bg-primary text-center text-white font-weight-bold p-4 mr-md-2 mb-2 mb-md-0"
+                style="min-width: 12.5rem;"
+              >
+                <p class="h3">11</p>
+                <p class="h4">Tuesday</p>
+              </div>
+              <div class="d-flex flex-column justify-content-end">
+                <p class="h4">First Day of School</p>
+                <p class="h4">All day</p>
               </div>
             </div>
           </div>
